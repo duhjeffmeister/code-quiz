@@ -1,11 +1,10 @@
 // Variables for initials and high score.
-var userInitials = []
 var userInput = ""
+var userInitials = []
+var playerScore = ""
 var highScore = []
 
-
-
-// Variables for questions
+// Question 1
 var questionOne = {
     question1: "1. Which of the following keywords is used to define a variable in Javascript?",
     answer1A: "var",
@@ -15,6 +14,7 @@ var questionOne = {
     // Correct answer is C
 }
 
+// Question 2
 var questionTwo = {
     question2: "2. Which method returns the character at the specified index?",
     answer2A: "charAt()",
@@ -24,6 +24,7 @@ var questionTwo = {
     // Correct answer is A
 }
 
+// Question 3
 var questionThree = {
     question3: "3. What type of language is Javascript?",
     answer3A: "Object-Based",
@@ -33,6 +34,7 @@ var questionThree = {
     // Correct answer is B
 }
 
+// Question 4
 var questionFour = {
     questionA: "4. Which of these contain an executable statement?",
     answer4A: "// var x = 0; // var y = 0;", 
@@ -42,6 +44,7 @@ var questionFour = {
     // Correct answer is D
 }
 
+// Question 5
 var questionFive = {
     question5: "5. Which of the following methods is used to access HTML elements using Javascript?",
     answer5A: "getElementByID()",
@@ -52,43 +55,49 @@ var questionFive = {
 }
 
 // Declaring Timer for 60 seconds
-// Event listeneer starting when "start Quiz" is clicked
-var time = 5
+function timer() {
+var time = 1
 var countDown = setInterval(function() {  
     document.getElementById("countdown").textContent = "Time left: " + time + " seconds"; 
     if (time === 0) {
         alert("Sorry but you have run out of time");
         clearInterval(countDown);
+        // Put some type of function in here to bring you to the "#divhighscore" slide.
     }
     else if (time > 0) {
         time --;
     }    
 }, 1000)
+}
 
-// Event listener for start button starting the timer and showing the first question.
+// Replaces the original "#divstartquiz" element with "#divquestion" element
+function showQuestion() {
 
-// Question 1
-    // Array with answers
+}
 
-// Question 2
-    // Array with answers
+// Changes question information to next question.
+// For correct answer, keep score at 5
+// For incorrect answer, subtract 1 point and subtract 10 seconds from the timer
+function changeQuestion() {
 
-// Question 3
-    // Array with answers
+}
 
-// Question 4
-    // Array with answers
+// If player timer runs out, or they get to the end of the quiz, bring them to the final "slide" and 
+function endGame() {
 
-// Question 5
-    // Array with answers
+}
 
+// Call all functions in sequential order, to be started with a button click of "#start-button"
+function startQuiz() {
+    showQuestion();
+    changeQuestion();
+    endGame();
+}
 
 // When I click the start button
-    // Create start button with event listener
-    // A timer starts and I am presented with a question
+    // Event listener for "#start-button" to start function startQuiz() to start timer and bring up question 1
     
-    // When I answer a question
-        // Create an event listener for the various answers
+    // Event listener for 
 
     // I am presented with another question
         // Bring up the second question, etc.
