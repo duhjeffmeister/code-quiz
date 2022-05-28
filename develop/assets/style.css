@@ -1,0 +1,25 @@
+.slide {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.answer-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center; 
+}
+
+#start-button {
+    width: 200px;
+}
+
+#timer-display {
+
+}
+#countdown {
+    display: flex;
+    justify-content: flex-end;
+}
