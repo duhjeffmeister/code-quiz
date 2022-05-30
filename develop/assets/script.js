@@ -15,20 +15,26 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
 
 // Declaring Timer for 60 seconds
-// function timer() {
+function timer() {
+    // Quiz time of 60 seconds
     var time = 60
+    // Start countdown
     var countDown = setInterval(function() {  
+        // Reference the countdown p element and put the number of seconds remaining in it
         document.getElementById("countdown").textContent = "Time left: " + time + " seconds"; 
+        // Check to make sure time is 0, and if it is, display an alert
         if (time === 0) {
             alert("Sorry but you have run out of time");
+            //Clears interval for countDown so we can start over 
             clearInterval(countDown);
-            // Put some type of function in here to bring you to the "#divhighscore" slide.
         }
+        // If time is not out
         else if (time > 0) {
+            // Increment time by -1 second everytime loop runs and it's seconds left isn't 0
             time --;
         }    
     }, 1000)
-
+}
 // Execute startGame() when startButton is clicked
 startButton.addEventListener('click', startGame)
 // Goes to the next item in the question array to bring another question
