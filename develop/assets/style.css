@@ -120,3 +120,8 @@ body.wrong {
     /* Hides everything with this class */
     display: none;
 }
+
+#countdown {
+    display: flex;
+    justify-content: flex-end;
+}
