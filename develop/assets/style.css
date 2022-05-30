@@ -13,10 +13,9 @@
     --hue-correct: 145;
 }
 
-/* Format body into center */
 body {
     /* Default neutral color before right or wrong */
-    --hue: var(--hue-neutral)
+    --hue: var(--hue-neutral);
     /* Remove padding and margin */
     padding: 0;
     margin: 0;
@@ -26,5 +25,98 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    
+    /* Set background color with 100% saturation and 20%
+    lightness to make it a fairly dark color */
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+body.correct {
+    /* Display color when correct */
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    /* Display color when correct */
+    --hue: var(--hue-wrong);
+}
+
+.container {
+    /* Establishes max width as 800px */
+    width: 800px;
+    /* Stops contents from overlapping by making it 80% of the page */
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    /* Content way too close to the container edges */
+    padding: 10px;
+    /* First number is the x-axis offset, second is y-axis offset, blur of 10px
+    to have a nice fade. 2px is our spread, which is how far out from the 
+    container it goes */
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    /* Organize the buttons to be one on top of the other */
+    display: grid; 
+    /* Create two columns of buttons repeated twice with auto width*/
+    grid-template-columns: repeat(2, auto);
+    /* Create 10px of space around everything */
+    gap: 10px;
+    /* Add space from the "question" text and the bottom "Start Quiz" and "Next"
+    buttons. Adds 20px to top and bottom, 0 on left and right*/
+    margin: 20px 0;
+}
+
+.btn {
+    /* Change button colors */
+    --hue: var(--hue-neutral);
+    /* Creates 1px border 100% saturation, but 30% lightness to make border darker 
+    than fill color */
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    /* Saturation 100% and lightness 50% to be brighter than background color */
+    background-color: hsl(var(--hue), 100%, 50%);
+    /* Rounded corner */
+    border-radius: 5px;
+    /* Padding so that te buttons aren't so crunched up; increases the button size */
+    padding: 5px 10px;
+    /* Changes text color */
+    color: white;
+    /* No outline for letters */
+    outline: none;
+}
+
+/* When you hover over button */
+.btn:hover {
+    border-color: black;
+}
+
+/* Change color if answer is right */
+.btn.correct {
+    --hue: var(--hue-correct);
+    /* Changes font color when button turns green because it's hard to see */
+    color: black;
+}
+
+/* Change color if answer is wrong */
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* Make buttons bigger  */
+    padding: 10px 20px;
+}
+
+.controls {
+    /* Centers the buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    /* Hides everything with this class */
+    display: none;
 }
