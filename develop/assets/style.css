@@ -1,25 +1,30 @@
-.slide {
+/* Universal selector selects all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Using HSL for colors */
+    /* Standard color for body before answering */
+    --hue-neutral: 200;
+    /* Color for wrong answer */
+    --hue-wrong: 0;
+    /* Color for correct answer */
+    --hue-correct: 145;
+}
+
+/* Format body into center */
+body {
+    /* Default neutral color before right or wrong */
+    --hue: var(--hue-neutral)
+    /* Remove padding and margin */
+    padding: 0;
+    margin: 0;
+    /* Puts quiz window in the center */
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
-}
-
-.answer-list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center; 
-}
-
-#start-button {
-    width: 200px;
-}
-
-#timer-display {
-
-}
-#countdown {
-    display: flex;
-    justify-content: flex-end;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
 }

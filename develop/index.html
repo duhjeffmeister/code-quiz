@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Code Quiz</title>
-    <link rel="stylesheet" href="./assets/style.css" />
-  </head>
-  <body>
-    <!--Timer Box-->
-      <p id="countdown"></p>
-    <!--First slide-->
-    <div class="slide" id="divstartquiz">
-      <h1 class="slidetitle">Click the button to start the quiz!</h1>
-      <button class="button" id="start-button">Start Quiz</button>
-    </div>
-    <!--Second slide-->
-    <div class="slide" id="divquestion">
-      <h2 class="slidetitle" id="questiontext">This is a placeholder for a question</h2>
-        <div class="answer-list" style="list-style-type: none">
-          <button class="button" id="answerA">A. Placeholder text</button>
-          <button class="button" id="answerB">B. Placeholder text</button>
-          <button class="button" id="answerC">C. Placeholder text</button>  
-          <button class="button" id="answerD">D. Placeholder text</button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/style.css" rel="stylesheet">
+    <title>Coding Quiz</title>    
+</head>
+<body>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start Quiz</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button> 
         </div>
     </div>
-    </div>
-    <!--Third slide-->
-    <div class="slide" id="divhighscore">
-      <h2 class="slidetitle">Please enter your initials below</h2>
-      <input type="txt" id="initials" name="userinitials" required maxlength="3"></input>
-      <button class="button">Submit</button>
-    </div>
-    <script src="./assets/script.js">
-    </script>
-  </body>
+</body>
+<script src="/develop/assets/script.js"></script>
 </html>
