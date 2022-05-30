@@ -14,6 +14,21 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 // and not a "const" because it needs to be able to be changed.
 let shuffledQuestions, currentQuestionIndex
 
+// Declaring Timer for 60 seconds
+// function timer() {
+    var time = 60
+    var countDown = setInterval(function() {  
+        document.getElementById("countdown").textContent = "Time left: " + time + " seconds"; 
+        if (time === 0) {
+            alert("Sorry but you have run out of time");
+            clearInterval(countDown);
+            // Put some type of function in here to bring you to the "#divhighscore" slide.
+        }
+        else if (time > 0) {
+            time --;
+        }    
+    }, 1000)
+
 
 // Execute startGame() when startButton is clicked
 startButton.addEventListener('click', startGame)
