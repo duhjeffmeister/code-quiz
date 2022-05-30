@@ -29,7 +29,6 @@ let shuffledQuestions, currentQuestionIndex
         }    
     }, 1000)
 
-
 // Execute startGame() when startButton is clicked
 startButton.addEventListener('click', startGame)
 // Goes to the next item in the question array to bring another question
